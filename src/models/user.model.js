@@ -1,5 +1,4 @@
 import { Schema, model } from 'mongoose';
-import bcrypt from 'bcrypt';
 
 const userSchema = new Schema(
   {
@@ -7,18 +6,23 @@ const userSchema = new Schema(
       type: String,
       required: true,
     },
-    email:{
+    email: {
       type: String,
       required: true,
+      unique: true
     },
     phone: {
       type: String,
     },
-    password:{
+    password: {
       type: String,
       required: true,
       select: false
-    }
+    },
+    otp: { 
+      type: String, 
+      default: null 
+    } // ✅ Added OTP field
   },
   {
     timestamps: true

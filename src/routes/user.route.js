@@ -9,4 +9,8 @@ router.get('/getUsers', userAuth, userController.getUsers);
 router.post('/register', newUserValidator, userController.registerUser);
 router.post('/login', userController.loginUser);
 
+// Forgot Password & Reset Password Routes
+router.post('/forgot-password', userController.forgotPassword);
+router.post('/reset-password', userController.resetPassword);
+
 export default router;
