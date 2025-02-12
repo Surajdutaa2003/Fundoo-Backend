@@ -1,8 +1,12 @@
-import { description } from "@hapi/joi/lib/base";
 import mongoose from "mongoose";
-const noteSchema=new  mongoose.Schema({
-    userId:{type:mongoose.SchemaType.ObjectID,ref:"User",require:true},
-    title:{type:String,require:true},
-    description:{type:String,require:true},
 
-},{timestamps:true});
+const noteSchema = new mongoose.Schema(
+  {
+    userId: { type: mongoose.Schema.Types.ObjectId, ref: "User", required: true },
+    title: { type: String, required: true },
+    description: { type: String, required: true },
+  },
+  { timestamps: true }
+);
+
+export default mongoose.model("Note", noteSchema);
