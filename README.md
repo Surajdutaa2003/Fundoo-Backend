@@ -30,3 +30,5 @@ Fundoo App is a backend service built with Express.js that allows users to regis
 ```bash
 git clone https://github.com/your-username/fundoo-app.git
 cd fundoo-app
+### 2. Swagger Link
+http://localhost:3000/api-docs/
